@@ -1,0 +1,9 @@
+---
+- hosts: all
+  become: true
+  become_method: sudo
+  tasks:
+ - name: Install docker
+   yum: name=docker state=latest
+ - name: Install git
+   yum: name=git state=latest
