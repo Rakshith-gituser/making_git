@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  become_method: sudo
+  tasks:
+ - name: Installing multiple packages
+   yum: name={{ item }} state=latest
+   with_items:
+  - git
+  - python
+  - mysql
